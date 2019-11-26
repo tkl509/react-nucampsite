@@ -1,22 +1,12 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Open-Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+h5 {
+  font-family: "Lobster", cursive;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card-img-overlay h5 {
   color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+  background-color: rgba(0, 0, 0, 0.5);
 }
