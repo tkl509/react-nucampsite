@@ -7,7 +7,7 @@ function RenderCard({item}) {
             <CardImg src={item.image} alt={item.name} />
             <CardBody>
                 <CardTitle>{item.name}</CardTitle>
-                <CardTitle>{item.description}</CardTitle>
+                <CardText>{item.description}</CardText>
             </CardBody>
         </Card>
     );
