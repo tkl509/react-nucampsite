@@ -6,7 +6,8 @@ function RenderCampsite({campsite}) {
     return (
         <div className="col-md-5 m-1">
             <Card>
-                <CardImg top src={`/${campsite.image}`} alt={campsite.name} />
+{/*                <CardImg top src={`/${campsite.image}`} alt={campsite.name} /> */}
+                <CardImg top src={campsite.image} alt={campsite.name} />
                 <CardBody>
                     <CardText>{campsite.description}</CardText>
                 </CardBody>
@@ -38,6 +39,7 @@ function CampsiteInfo(props) {
                 <div className="row">
                     <div className="col">
                         <Breadcrumb>
+                            <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                             <BreadcrumbItem><Link to="/directory">Directory</Link></BreadcrumbItem>
                             <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
                         </Breadcrumb>

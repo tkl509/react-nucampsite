@@ -61,7 +61,7 @@ export const COMMENTS =
         campsiteId: 1,
         rating: 5, 
         text: "1 A wonderful place to reconnect with nature.",
-        author: "Jordan Runn",
+        author: "1 Jordan Runn",
         date: "2019-08-04T20:11Z"
     },
     {
