@@ -21,7 +21,7 @@ function RenderCampsite({campsite}) {
     );
 }
 
-function RenderComments({comments}) {
+function RenderComments({comments, addComment, campsiteId}) {
     if(comments) {
         return(
             <div className="col-md-5 m-1">
@@ -31,7 +31,7 @@ function RenderComments({comments}) {
                         <div key={comment.id}>{comment.text}<p>-- {comment.author}, {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
                         </p></div>);
                 })}
-                <CommentForm />
+                <CommentForm campsiteId={campsiteId} addComment={addComment} />
             </div>
         );
     }
@@ -55,7 +55,10 @@ function CampsiteInfo(props) {
                 </div>
                 <div className="row">
                     <RenderCampsite campsite={props.campsite} />
-                    <RenderComments comments={props.comments} />
+                    <RenderComments 
+                        comments={props.comments}
+                        addComment={props.addComment}
+                        campsiteId={props.campsite.id} />
                     </div>
                 </div>
             );
@@ -93,7 +96,7 @@ function CampsiteInfo(props) {
 
         handleSubmit(values) {
             alert('Current state is: ' + JSON.stringify(values));
-            console.log('Current state is: ' + JSON.stringify(values));
+            this.props.addComment(this.props.campsiteId, values.rating, values.author, values.comment);
             this.toggleModal();
         }
 
