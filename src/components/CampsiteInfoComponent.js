@@ -117,18 +117,16 @@ function CampsiteInfo(props) {
 
         handleSubmit(values) {
             alert('Current state is: ' + JSON.stringify(values));
-            this.props.addComment(this.props.campsiteId, values.rating, values.author, values.comment);
+            this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
             this.toggleModal();
         }
 
         render() {
             return(
                 <div className="container">
-                    <span className="navbar-text ml-auto">
-                        <Button outline onClick={this.toggleModal}>
-                            <i className="fa fa-pencil fa-lg" /> Submit Comment
-                        </Button>
-                    </span>
+                    <Button outline onClick={this.toggleModal}>
+                        <i className="fa fa-pencil fa-lg" /> Submit Comment
+                    </Button>
 
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
@@ -170,9 +168,9 @@ function CampsiteInfo(props) {
                                     /> 
                                     </Row>
                                     <Row className="form-group">
-                                        <Label htmlFor="comment" >Comment</Label>
+                                        <Label htmlFor="text" >Comment</Label>
                                         <Col md={10}>
-                                        <Control.textarea model=".comment" id="comment" name="comment"
+                                        <Control.textarea model=".text" id="text" name="text"
                                             rows="6"
                                             className="form-control"
                                         />
