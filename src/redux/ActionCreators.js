@@ -1,6 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 import { CAMPSITES } from '../shared/campsites';
+import { PROMOTIONS } from '../shared/promotions';
 
 export const fetchCampsites = () => dispatch => {
     dispatch(campsitesLoading());
@@ -104,7 +105,7 @@ export const fetchPromotions = () => dispatch => {
         if (response.ok) {
             return response;
         } else {
-            const error = new Error(`Error ${response.status}: ${response.statusText}`)
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
             error.response = response;
             throw error;
         }
@@ -115,9 +116,9 @@ export const fetchPromotions = () => dispatch => {
         }
     )
     .then(response => response.json())
-    .then(promotions => dispatch(addPromotions(promotions)))
+    .then(promotions => dispatch(addPromotions(PROMOTIONS)))
     .catch(error => dispatch(promotionsFailed(error.message)));
-}
+};
 
 export const promotionsLoading = () => ({
     type: ActionTypes.PROMOTIONS_LOADING
@@ -131,7 +132,7 @@ export const promotionsFailed = errMess => ({
 export const addPromotions = promotions => ({
     type: ActionTypes.ADD_PROMOTIONS,
     payload: promotions
-})
+});
 
 export const campsitesLoading = () => ({
     type: ActionTypes.CAMPSITES_LOADING

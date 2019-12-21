@@ -44,7 +44,7 @@ class Main extends Component {
                 <Home
                     campsite={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]}
                     campsitesLoading={this.props.campsites.isLoading}
-                    campsitesErrMes={this.props.campsites.errMess}
+                    campsitesErrMess={this.props.campsites.errMess}
                     partner={this.props.partners.filter(partner => partner.featured)[0]}
                     promotion={this.props.promotions.promotions.filter(promotion => promotion.featured)[0]}
                     promotionLoading={this.props.promotions.isLoading}
